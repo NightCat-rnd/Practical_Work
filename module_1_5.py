@@ -1,5 +1,6 @@
 # Практическое задание по уроку - Неизменяемые и изменяемые объекты. Кортежи
 # Выполнил Андрей Чекунов
+import sys # для использования getsizeof
 
 immutable_var = (1,2,3,4,5,'dog','cat',5.2,[1,2,3])
 #print(type(immutable_var))
@@ -35,6 +36,7 @@ print('------------------\n')
 #
 print('кортеж')
 print(immutable_var)
+sizeof_old_tuple = sys.getsizeof(immutable_var)
 temp_list = list(immutable_var)
 print('преобразовали в список')
 print(type(temp_list))
@@ -47,6 +49,7 @@ print(id(immutable_var))
 id_old = id(immutable_var)
 del immutable_var
 immutable_var = tuple(temp_list)
+sizeof_new_tuple = sys.getsizeof(immutable_var)
 print('удалили кортеж и создали заново из списка')
 print('ID нового кортежа с тем же идентификатором и его содержимое')
 print(id(immutable_var))
@@ -57,4 +60,7 @@ if id_old == id_new:
     print('ID кортежей идентичны')
 else:
     print('ID кортежей НЕ идентичны')
+print('выводим размеры старого и нового кортежа ')
+print('Old - '+str(sizeof_old_tuple))
+print('New - '+str(sizeof_new_tuple))
 #  очень интересно работает виртуальная машина Питона, надо разбираться что там внутри происходит :)
