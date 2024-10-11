@@ -43,7 +43,7 @@ send_email('Напоминаю самому себе о вебинаре', 'urba
 '''
 
 
-def send_email(message, recipient, sender='university.help@gmail.com'):
+def send_email(message, recipient, *, sender='university.help@gmail.com'):
     domains_ok = {'com', 'ru', 'net'}  # Разрешенные домены
     recipient.lower()  # переводим все в нижний регистр
     sender.lower()
