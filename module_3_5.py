@@ -58,3 +58,5 @@ result = get_multiplied_digits(2222222222)
 print(result)
 result = get_multiplied_digits(402030023409723)  #
 print(result)
+result = get_multiplied_digits(423582743158753243)  #
+print(result)
