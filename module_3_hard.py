@@ -28,50 +28,27 @@ data_structure = [
   ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
-data_structure1 = [
-  [1, 2, 3],
-#  {'a': 4, 'b': 5},
-#  (6, {'cube': 7, 'drum': 8}),
-  "Hello",
-#  ((), [{(2, 'Urban', ('Urban2', 35))}]),
-    34
-]
-num = 0
-sum = 0
 def calculate_structure_sum(*args):
-    global num
-    global sum
-    print('Entry',num)
-    num += 1
-#    sum = 0
+    ret = 0
     for arg in args:
-        print(type(arg))
         if isinstance(arg, list):
-            print('List',arg)
             for item in arg:
-                calculate_structure_sum(item)
+                ret += calculate_structure_sum(item)
         elif isinstance(arg, tuple):
             for item in arg:
-                calculate_structure_sum(item)
-            print('Tuple',arg)
+                ret += calculate_structure_sum(item)
         elif isinstance(arg, set):
             for item in arg:
-                calculate_structure_sum(item)
-            print('Set',arg)
+                ret += calculate_structure_sum(item)
         elif isinstance(arg,dict):
             for k,v in arg.items():
-                calculate_structure_sum(k)
-                calculate_structure_sum(v)
-                print(f'key={k}, value={v}')
-
+                ret += calculate_structure_sum(k)
+                ret += calculate_structure_sum(v)
         elif isinstance(arg, int):
-           print('Int',arg)
-           sum += arg
+            ret += arg
         elif isinstance(arg, str):
-            print('String',arg)
-            sum += len(arg)
-    print('Sum = ',sum)
+            ret += len(arg)
+    return ret
 
-
-calculate_structure_sum(data_structure)
-#calculate_structure_sum(data_structure1)
+result = calculate_structure_sum(data_structure)
+print(result)
