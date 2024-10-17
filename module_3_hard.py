@@ -17,10 +17,16 @@ data_structure = [
 
 Для примера, указанного выше, расчёт вёлся следующим образом:
 1 + 2 + 3 + len('a') + 4 + len('b') + 5 + 6 + len('cube') + 7 + .... + 35 = 99
-
 '''
 
 data_structure = [
+  [1, 2, 3],
+  {'a': 4, 'b': 5},
+  (6, {'cube': 7, 'drum': 8}),
+  "Hello",
+  ((), [{(2, 'Urban', ('Urban2', 35))}])
+]
+data_structure1 = [
   [1, 2, 3],
   {'a': 4, 'b': 5},
   (6, {'cube': 7, 'drum': 8}),
@@ -52,3 +58,6 @@ def calculate_structure_sum(*args):
 
 result = calculate_structure_sum(data_structure)
 print(result)
+result = calculate_structure_sum(data_structure,data_structure1,data_structure,data_structure,data_structure1)
+print(result)
+
