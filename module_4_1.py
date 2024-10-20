@@ -45,9 +45,12 @@ result1 = fake_divide(69, 3)
 result2 = fake_divide(3, 0)
 result3 = true_divide(49, 7)
 result4 = true_divide(15, 0)
-result5 = true_divide(-876,0)
 print(result1)
 print(result2)
 print(result3)
 print(result4)
+# добавленное
+result5 = true_divide(-876,0)    # деление отрицательного числа на 0 дает минус бесконечность
 print(result5)
+result6 = true_divide(0,0)    # деление нуля на ноль дает неопределенность (NaN)
+print(result6)

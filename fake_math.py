@@ -10,8 +10,12 @@ def divide(first, second):
 def main():
     result1 = divide(69, 3)
     result2 = divide(3, 0)
+    result11 = divide(0,3)
+    result12 = divide(0,0)
     print(result1)
     print(result2)
+    print(result11)
+    print(result12)
 
 if __name__ == '__main__':
     main()
