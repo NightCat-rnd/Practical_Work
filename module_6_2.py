@@ -1,6 +1,5 @@
 # Домашнее задание по теме "Доступ к свойствам родителя. Переопределение свойств."
 # выполнил Андрей Чекунов
-
 class Vehicle:
     __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white', 'yellow']
     def __init__(self, owner:str, model:str, color:str, power:int):
