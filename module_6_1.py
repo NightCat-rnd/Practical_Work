@@ -2,10 +2,11 @@
 # Выполнил Андрей Чекунов
 
 class Animal:
-    alive = True
-    fed = False
+
     def __init__(self, name:str):
         self.name = name
+        self.alive = True
+        self.fed = False
     def __str__(self):
         return 'Animal'
     def eat(self, food):
