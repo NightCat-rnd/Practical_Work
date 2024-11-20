@@ -28,7 +28,6 @@ class Shop:
             first_word = []
             for line in lines:
                 first_word.append(line.strip().split(',')[0])
-            file.seek(0)
             for arg in products:
                 if arg.name in first_word:
                     print(f'Продукт {arg.name} уже есть в магазине')
@@ -51,6 +50,9 @@ p3 = Product('Potato', 5.5, 'Vegetables')
 #print(p3) # __str__
 s1.add(p1, p2, p3)
 print(s1.get_products())
+#p4 = Product('Apple', 70, 'Vegetables')
+#s1.add(p3,p4)
+#print(s1.get_products())
 
 '''
 Вывод на консоль:
