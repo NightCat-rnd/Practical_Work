@@ -7,7 +7,6 @@ class WordsFinder:
     def __init__(self,*file_names:str):
         for item in file_names:
             self.__file_names.append(item)
-        print(self.__file_names)
 
     def get_all_words(self)->dict:
         return_dict = dict()
