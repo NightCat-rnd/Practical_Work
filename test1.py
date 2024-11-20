@@ -1,7 +1,7 @@
 import string
 #string.punctuation
 # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
-# text
+#
 all_words = []
 with open('test.py', encoding='utf-8') as file:
     str_file = file.read().lower()

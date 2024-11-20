@@ -23,6 +23,7 @@ class WordsFinder:
         return return_dict
 
     def find(self,word:str)->dict:
+        # если не находит слова, то в значении словаря будет None
         return_dict = dict()
         tmp_dict = self.get_all_words()
         for key, value in tmp_dict.items():
