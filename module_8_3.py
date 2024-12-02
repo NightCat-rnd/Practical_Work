@@ -9,10 +9,10 @@ class IncorrectCarNumbers(Exception):
 class Car:
     def __init__(self, model, vin, numbers):
         self.model = model
-        self.__vin = vin
-        self.__numbers = numbers
-        Car.__is_valid_vin(vin)
-        Car.__is_valid_numbers(numbers)
+        if Car.__is_valid_vin(vin):
+            self.__vin = vin
+        if Car.__is_valid_numbers(numbers):
+            self.__numbers = numbers
     def __is_valid_vin(vin_number):
         if not isinstance(vin_number, int):
             raise IncorrectVinNumber(f'Не корректный тип vin - {vin_number}')
