@@ -18,19 +18,19 @@ class Iterator:
         return self
 
     def __next__(self):
-        res = self.pointer
+        self.__this = self.pointer
         if self.step < 0 :
             if self.pointer < self.stop:
                 raise StopIteration()
             else:
                 self.pointer += self.step
-                return res
+                return self.__this
         else:
             if self.pointer > self.stop:
                 raise StopIteration()
             else:
                 self.pointer += self.step
-                return res
+                return self.__this
 
 try:
     iter1 = Iterator(100, 200, 0)
