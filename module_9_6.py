@@ -8,7 +8,6 @@ def all_variants(text:str):
             stop = i + n
             if stop > len(text):
                 continue
-            #res = text[i:stop:]
             yield text[i:stop:]
         n += 1
 
