@@ -7,11 +7,10 @@ import multiprocessing
 def read_info(name:str):
     all_data = []
     with open(name,'r') as fp:
-        line = True
+        line = fp.readline()
         while line:
-            line = fp.readline()
             all_data.append(line)
-    #print(all_data)
+            line = fp.readline()
 
 if __name__ == '__main__':
     filenames = [f'./file {number}.txt' for number in range(1,5)]
