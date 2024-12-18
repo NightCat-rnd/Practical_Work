@@ -33,9 +33,6 @@ class Bank:
                 self.lock.acquire()
             time.sleep(0.001)
 
-    def run(self):
-        pass
-
 bk = Bank()
 th1 = threading.Thread(target=Bank.deposit, args=(bk,))
 th2 = threading.Thread(target=Bank.take, args=(bk,))
